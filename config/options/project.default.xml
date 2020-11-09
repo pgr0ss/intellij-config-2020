@@ -14,7 +14,16 @@
         </option>
       </component>
       <component name="PropertiesComponent">
-        <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+        <property name="settings.editor.selected.configurable" value="settings.saveactions" />
+      </component>
+      <component name="SaveActionSettings">
+        <option name="actions">
+          <set>
+            <option value="activate" />
+            <option value="organizeImports" />
+          </set>
+        </option>
+        <option name="configurationPath" value="" />
       </component>
     </defaultProject>
   </component>
