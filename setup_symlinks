@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+
+require "fileutils"
+
+THIS_DIR = File.expand_path(".")
+
+if `uname -s`.strip == "Darwin"
+  CONFIGS = {
+    "~/Library/Application\ Support/JetBrains/IntelliJIdea2020.2" => THIS_DIR,
+  }
+else
+  CONFIGS = {
+  "~/.config/JetBrains/IdeaIC2020.2" => THIS_DIR,
+  "~/.local/share/JetBrains/IdeaIC2020.2" => "#{THIS_DIR}/plugins",
+  }
+end
+
+def main
+  CONFIGS.each do |source, destination|
+    source = File.expand_path(source)
+    destination = File.expand_path(destination)
+
+    if File.exist?(source)
+      backup = "#{source}.backup.#{Time.now.strftime("%Y%m%d%H%M%S")}"
+      puts "Backing up #{source} to #{backup}"
+      FileUtils.cp_r(source, backup)
+    end
+
+    FileUtils.mkdir_p(File.dirname(source))
+    FileUtils.rm_rf(source)
+    FileUtils.ln_s(destination, source)
+  end
+end
+
+main if __FILE__ == $0

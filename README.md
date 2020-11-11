@@ -22,7 +22,7 @@ And a handful of other smaller changes, such as:
 Close IntelliJ IDEA and symlink the files to the proper places with:
 
 ```
-./setup_symlinks.sh
+./setup_symlinks
 ```
 
 You may also need to configure the project JDK since the path may be different. `File -> Project Structure` and set `Project SDK`.
