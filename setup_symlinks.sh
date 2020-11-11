@@ -4,20 +4,21 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+THIS_DIR=$(pwd -P)
+
 if [ "$(uname -s)" = 'Darwin' ]; then
-  READLINK=greadlink
   CONFIG_DIR=~/Library/Application\ Support/JetBrains/IntelliJIdea2020.2
-  PLUGINS_DIR=~/Library/Application\ Support/JetBrains/IntelliJIdea2020.2/plugins
+
+  mkdir -p $(dirname "${CONFIG_DIR}")
+
+  ln -sf ${THIS_DIR} "${CONFIG_DIR}"
 else
-  READLINK=readlink
   CONFIG_DIR=~/.config/JetBrains/IdeaIC2020.2
   PLUGINS_DIR=~/.local/share/JetBrains/IdeaIC2020.2
+
+  mkdir -p $(dirname "${CONFIG_DIR}")
+  mkdir -p $(dirname "${PLUGINS_DIR}")
+
+  ln -sf ${THIS_DIR} "${CONFIG_DIR}"
+  ln -sf ${THIS_DIR}/plugins "${PLUGINS_DIR}"
 fi
-
-THIS_DIR=$($READLINK -f $(dirname $0))
-
-mkdir -p $(dirname "${CONFIG_DIR}")
-mkdir -p $(dirname "${PLUGINS_DIR}")
-
-ln -sf ${THIS_DIR}/config "${CONFIG_DIR}"
-ln -sf ${THIS_DIR}/plugins "${PLUGINS_DIR}"
