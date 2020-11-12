@@ -2,7 +2,7 @@
 
 require "fileutils"
 
-THIS_DIR = File.expand_path(".")
+THIS_DIR = File.expand_path("..", __FILE__)
 
 if `uname -s`.strip == "Darwin"
   CONFIGS = {
@@ -19,7 +19,6 @@ def main
   CONFIGS.each do |source, destination|
     source = File.expand_path(source)
     destination = File.expand_path(destination)
-
     if File.exist?(source)
       backup = "#{source}.backup.#{Time.now.strftime("%Y%m%d%H%M%S")}"
       puts "Backing up #{source} to #{backup}"
