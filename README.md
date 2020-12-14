@@ -1,6 +1,6 @@
 # intellij-config
 
-Config files for [IntelliJ IDEA](https://www.jetbrains.com/idea/) version 2020.2.
+Config files for [IntelliJ IDEA](https://www.jetbrains.com/idea/) version 2020.3.
 
 ## Notable Changes
 

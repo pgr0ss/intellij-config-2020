@@ -6,12 +6,12 @@ THIS_DIR = File.expand_path("..", __FILE__)
 
 if `uname -s`.strip == "Darwin"
   CONFIGS = {
-    "~/Library/Application\ Support/JetBrains/IntelliJIdea2020.2" => THIS_DIR,
+    "~/Library/Application\ Support/JetBrains/IntelliJIdea2020.3" => THIS_DIR,
   }
 else
   CONFIGS = {
-  "~/.config/JetBrains/IdeaIC2020.2" => THIS_DIR,
-  "~/.local/share/JetBrains/IdeaIC2020.2" => "#{THIS_DIR}/plugins",
+  "~/.config/JetBrains/IdeaIC2020.3" => THIS_DIR,
+  "~/.local/share/JetBrains/IdeaIC2020.3" => "#{THIS_DIR}/plugins",
   }
 end
 
