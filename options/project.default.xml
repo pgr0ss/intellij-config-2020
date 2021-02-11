@@ -6,6 +6,9 @@
           <profile default="true" name="Default" enabled="true" />
         </annotationProcessing>
       </component>
+      <component name="GoogleJavaFormatSettings">
+        <option name="enabled" value="true" />
+      </component>
       <component name="MavenImportPreferences">
         <option name="generalSettings">
           <MavenGeneralSettings>
@@ -14,13 +17,14 @@
         </option>
       </component>
       <component name="PropertiesComponent">
-        <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+        <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
       </component>
       <component name="SaveActionSettings">
         <option name="actions">
           <set>
             <option value="activate" />
             <option value="organizeImports" />
+            <option value="reformat" />
           </set>
         </option>
         <option name="configurationPath" value="" />
